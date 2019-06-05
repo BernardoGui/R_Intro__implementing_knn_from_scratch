@@ -1,0 +1,91 @@
+---
+title: "A quick introduction to R"
+subtitle: "By implementing kNN from scratch"
+author: "Bernhard Piskernik"
+output: 
+  ioslides_presentation:
+    logo: images/Rlogo.svg
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## About me
+
+Senior Data Scientist at Novomatic
+
+Background in Humanities (Psychology)
+
+## R {.build}
+
+programming language for data analysis and statistics
+
+it is free - Open Source-Software with GNU General Public License (GPL) 
+
+it is also very popular in certain application areas (statistics, bioinformatics, ...) 
+
+it is a dynamically typed interpreted language, typically used interactively
+
+very extensible (>14k libraries at [CRAN](https://cran.r-project.org/))
+
+interfaces to add functions in Fortran, C, C++, ...
+
+## What makes R special?  {.build}
+
+it is old (1992, but based on _S_ which was developed 1972)
+
+it is explicitly build for data analysis and statistics (do not try to use it for general purpose programming)
+
+it is 1-indexed
+
+syntax WAS obnoxious before _tidyverse_
+
+in combination with RStudio (IDE) very pleasant data wrangling and analysis experience
+
+## The fundamental concept of R: vectors  {.build .smaller}
+
+```{r a}
+a <- rep(1,10)
+```
+
+```{r a_display, echo=FALSE}
+a
+```
+
+```{r b}
+b <- 1:10
+```
+
+```{r b_display, echo=FALSE}
+b
+```
+
+
+```{r ab_plus}
+a+b
+```
+
+```{r ab_calc}
+a+2*b 
+```
+
+**Note: arithmetic operations act element-wise**
+
+# DEMO
+Building k-nearest neighbor classification from scratch
+
+## Quick overview of kNN-classification (naive) {.build}
+
+kNN is a non-parametric method for classification
+
+* compute the distances from the test examples to all stored examples 
+
+* get k-nearest neighbors per case
+
+* conduct majority vote on class membership
+
+
+
+
+
