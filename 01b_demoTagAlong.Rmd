@@ -1,0 +1,139 @@
+---
+title: "kNN from Screatch"
+output: html_notebook
+---
+
+# Preparations
+
+load data wrangling package
+
+```{r tidyvere}
+
+```
+
+
+load data ("data.csv")
+
+```{r dat_raw}
+
+```
+
+
+take a look at data
+
+(Note: data is from [Vienna's land charge register](https://www.data.gv.at/katalog/dataset/stadt-wien_kaufpreissammlungliegenschaftenwien){target="_blank"} to which I have added [price clusters](http://www.bernhardlearns.com/2017/10/finding-viennas-house-price-regions.html){target="_blank"})
+
+```{r}
+
+```
+
+quick visualization
+
+```{r, cache=TRUE, message=FALSE}
+## get map
+library(ggmap)
+vienna <- make_bbox(lon, lat, dat_raw) %>% 
+  get_stamenmap(zoom = 13, maptype = c("toner-lite"))
+ggmap(vienna, extent = "device") +
+  coord_cartesian() +
+  geom_point(data = dat_raw %>%
+               filter(train==1),
+             aes(x=lon, y=lat, color = as.factor(cluster)),
+             alpha=.5) +
+  geom_point(data = dat_raw %>%
+               filter(train==0),
+             aes(x=lon, y=lat),
+             alpha=.5, shape=4) +
+  theme(legend.position="none")
+```
+
+
+
+add id variable (= row number to data to identify individual cases)
+
+```{r}
+
+```
+
+select columns we will work with (id, lon, lat, cluster)
+
+```{r}
+
+```
+
+separate training and test data
+
+```{r}
+## test data has no assigned 'cluster'
+
+
+## get train data by anti join with original data
+
+```
+
+# Get the nearest neighbors
+
+cross training with test data (combine each case in training set with each case in the test set)
+
+```{r}
+
+```
+
+take a quick glance
+
+```{r}
+
+```
+
+calculate euclidean distance (= square root of the sum of distance squares)
+
+```{r}
+
+```
+
+get the k (=5) nearest cases per test set case
+
+```{r}
+
+  ## segregate by id1
+  
+  ## get the 5 cases with smallest dist
+  
+  ## sort by id1
+  
+```
+
+get mayority vote
+
+```{r}
+
+  ## segregate by id1 and cluster
+  
+  ## get counts per resulting group
+  
+  ## reduce to highest count
+  
+  ## remove 'n'
+  
+```
+
+add result to test data
+
+```{r}
+
+```
+
+
+visually check result
+
+```{r}
+
+```
+
+
+for reproducability
+
+```{r}
+
+```
+
