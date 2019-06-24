@@ -1,0 +1,7 @@
+---
+subtitle: "Thank you for your attention!"
+output: 
+  ioslides_presentation:
+    logo: images/NOVOMATIC.jpg
+    css: style_thx.css
+---
