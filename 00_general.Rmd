@@ -4,7 +4,8 @@ subtitle: "By implementing kNN from scratch"
 author: "Bernhard Piskernik"
 output: 
   ioslides_presentation:
-    logo: images/Rlogo.svg
+    logo: images/NOVOMATIC.png
+    css: style.css
 ---
 
 ```{r setup, include=FALSE}

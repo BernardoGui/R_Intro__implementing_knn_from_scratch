@@ -1,0 +1,21 @@
+.gdbar img {
+  width: 0px !important;
+  height: 0px !important;
+  margin: 0px 0px;
+}
+
+.gdbar {
+  width: 0px !important;
+  height: 0px !important;
+}
+
+slides > slide:not(.nobackground):before {
+  width: 180px;
+  height: 25px;
+  background-size: 180px 25px;
+}
+
+slides > slide {
+  background: linear-gradient(#ffffff, #ffffff 85%, #ffffff);
+  background-color: white;
+}
