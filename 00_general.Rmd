@@ -1,6 +1,5 @@
 ---
-title: "A quick introduction to R"
-subtitle: "By implementing kNN from scratch"
+title: "Data Wrangling with R"
 author: "Bernhard Piskernik"
 output: 
   ioslides_presentation:
