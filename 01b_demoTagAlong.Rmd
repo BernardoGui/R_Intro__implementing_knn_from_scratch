@@ -51,19 +51,19 @@ ggmap(vienna, extent = "device") +
 
 add id variable (= row number to data to identify individual cases)
 
-```{r}
+```{r dat_id}
 
 ```
 
 select columns we will work with (id, lon, lat, cluster)
 
-```{r}
+```{r dat_select}
 
 ```
 
 separate training and test data
 
-```{r}
+```{r dat_test__dat_train}
 ## test data has no assigned 'cluster'
 
 
@@ -75,7 +75,7 @@ separate training and test data
 
 cross training with test data (combine each case in training set with each case in the test set)
 
-```{r}
+```{r dat_expand}
 
 ```
 
@@ -87,13 +87,13 @@ take a quick glance
 
 calculate euclidean distance (= square root of the sum of distance squares)
 
-```{r}
+```{r dat_dist}
 
 ```
 
 get the k (=5) nearest cases per test set case
 
-```{r}
+```{r dat_5nn}
 
   ## segregate by id1
   
@@ -105,7 +105,7 @@ get the k (=5) nearest cases per test set case
 
 get mayority vote
 
-```{r}
+```{r dat_classified}
 
   ## segregate by id1 and cluster
   
@@ -119,7 +119,7 @@ get mayority vote
 
 add result to test data
 
-```{r}
+```{r dat_final}
 
 ```
 
