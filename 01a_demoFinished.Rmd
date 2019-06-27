@@ -123,6 +123,7 @@ dat_classified <- dat_5nn  %>%
   ## get counts per resulting group
   count() %>%
   ## reduce to highest count
+  group_by(id1) %°%
   top_n(1, n) %>%
   ## remove 'n'
   select(-n)
